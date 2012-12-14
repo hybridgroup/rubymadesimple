@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require fitvid
 //= require_tree .
+$(document).ready(function(){
+  $(".video-embed").fitVids();
+});

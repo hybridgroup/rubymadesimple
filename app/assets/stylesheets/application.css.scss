@@ -164,13 +164,22 @@ body {
     padding-bottom: 30px;
   }
 
-  .thumbnail {
+  %mediaframe {
     background-color: #fff;
     border: 1px solid #e1e2e3;
+    margin-bottom: 15px;
+  }
+
+  .video-thumbnail {
+    @extend %mediaframe;
     float: left;
     padding: 3px;
     margin-right: 12px;
-    margin-bottom: 15px;
+  }
+
+  .video-embed {
+    @extend %mediaframe;
+    padding: 8px;
   }
 
   .video-details {
@@ -311,5 +320,17 @@ ul.nav li {
     .#{$type} {
       @extend .icons-#{$type};
     }
+  }
+}
+
+body.videos.show {
+  .video-thumbnail {
+    display: none;
+  }
+}
+
+body.home.index {
+  .video-embed {
+    display: none;
   }
 }

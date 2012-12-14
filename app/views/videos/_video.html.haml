@@ -1,6 +1,8 @@
 %article.video.featured
   %h1.video-title= link_to video.title, video_path(video.id)
-  = image_tag video.thumbnail_url, class: 'thumbnail'
+  = image_tag video.thumbnail_url, class: 'video-thumbnail'
+  .video-embed
+    = video.embed.html_safe
   .video-details
     %span.episode-number
       EPISODE #1 -
