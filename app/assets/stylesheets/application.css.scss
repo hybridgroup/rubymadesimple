@@ -9,8 +9,238 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
 */
+
+@import "compass/reset";
+@import "compass";
+
+$color-gray: #a7a4a4;
+$color-red: #a7000e;
+
+a {
+  color: lighten($color-red, 10%);
+  text-decoration: none;
+}
+
+body {
+  font-family: Helvetica;
+  margin: 0px;
+}
+
+.container {
+  margin: 0px auto;
+  width: 860px;
+}
+
+.page-header {
+  @include pie-clearfix;
+
+  background: #eee image-url("colorbar.png") repeat-x top;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #d6dcdf;
+  margin-bottom: 40px;
+  padding: 40px 0px 30px;
+}
+
+.page-navigation {
+  float: right;
+  margin-top: 10px;
+}
+
+.navigation-items {
+  list-style: none;
+  .item {
+    float: left;
+    font-size: 18px;
+    display: block;
+    margin-left: 45px;
+    &.active {
+      a {
+        color: $color-red;
+      }
+    }
+    a {
+      color: $color-gray;
+      text-decoration: none;
+    }
+  }
+}
+
+.logo {
+}
+
+.page-copyright {
+  @include pie-clearfix;
+  background-color: #fff;
+  padding: 20px;
+
+  .rights {
+    float: left;
+    color: lighten($color-gray, 20%);
+    margin-right: 30px;
+  }
+
+  .links {
+    float: left;
+
+    .link {
+      float: left;
+      margin-right: 20px;
+      a {
+        color: #333;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .logo-hybridgroup {
+    float: right;
+  }
+}
+.page-footer {
+  @include pie-clearfix;
+
+  border-top: 1px solid #e2e6e9;
+  border-bottom: 1px solid #e2e6e9;
+  background: #f0f1f4;
+  clear: both;
+  margin-bottom: 10px;
+  padding: 30px 0px;
+
+  .links-title {
+    color: lighten($color-red, 10%);
+  }
+
+  .link {
+    a {
+      color: $color-gray;
+      font-size: 11px;
+    }
+  }
+
+  .sitemap {
+    float: left;
+    margin-right: 65px;
+  }
+}
+
+.page-main {
+  float: left;
+  width: 481px;
+}
+
+.page-sidebar {
+  float: right;
+  width: 300px;
+
+  .module-title {
+    background: #fff image-url("colorbar.png") no-repeat 110px 7px;
+    color: lighten($color-red, 20%);
+    font-size: 18px;
+    padding-bottom: 25px;
+  }
+
+  .module {
+    margin-bottom: 20px;
+  }
+
+}
+
+.videos {
+  .video {
+    border-bottom: 1px solid lighten($color-gray, 20%);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+  }
+
+  .thumbnail {
+    background-color: #fff;
+    border: 1px solid #e1e2e3;
+    float: left;
+    padding: 3px;
+    margin-right: 12px;
+    margin-bottom: 15px;
+  }
+
+  .video-details {
+    color: lighten($color-red, 10%);
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .video-length {
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .video-description {
+    color: #333;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .featured {
+    .thumbnail {
+      float: none;
+      padding: 8px;
+    }
+
+    .video-details,
+    .video-length,
+    .video-description {
+      font-size: 14px;
+    line-height: 18px;
+    }
+  }
+
+  .video-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    a {
+      color: $color-red;
+    }
+  }
+}
+
+
+.search {
+  input {
+    @include border-radius(3px);
+    @include box-shadow(rgba(#000000, 0.2) 1px 2px 11px 0px inset);
+
+    border: 1px solid #b2c4d4;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 10px 7px;
+    width: 100%;
+  }
+}
+
+
+.categories {
+  @include pie-clearfix;
+
+  .category {
+    float: left;
+    margin-bottom: 3px;
+    margin-right: 50px;
+    a {
+      color: #333;
+    }
+  }
+}
+
+.advertising {
+  .ad-300 {
+    margin-bottom: 10px;
+  }
+}
+
+
+// rails stuff
 .brand {
   float: left;
   padding-right: 8px;

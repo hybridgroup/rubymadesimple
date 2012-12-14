@@ -9,11 +9,93 @@
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    #container.container
-      %header
-        = render 'layouts/navigation'
-        = render 'layouts/messages'
-      #main{:role => "main"}
-        = yield
-      %footer
+    %header.page-header
+      .container
+        = image_tag 'logo.png', class: "logo"
+        -#= render 'layouts/navigation'
+        -#= render 'layouts/messages'
+        %nav.page-navigation
+          %ul.navigation-items
+            %li.item.active= link_to 'Join'
+            %li.item= link_to 'Log in'
+            %li.item= link_to 'Watch'
+            %li.item= link_to 'Upload'
+
+    .container
+      #main.page-main{:role => "main"}
+        -#= yield
+        .videos
+          %article.video.featured
+            %h1.video-title= link_to 'Action View Walkthrough'
+            .thumbnail
+              = image_tag 'placeholder-video.png'
+            .video-details
+              %span.episode-number
+                EPISODE #397 -
+              %span.episode-date
+                Dec 09, 2012 - 
+              %span.episode-comments
+                6 comments
+            .video-length
+              (15 minutes)
+            .video-description
+              %p Find out exactly what Rails is doing under the hood when it renders a view template for a response. What object context handles the template? How does the lookup process work? That and more covered in this code walkthrough. 
+          - 3.times do
+            %article.video
+              %h1.video-title= link_to 'Importing CSV and Excel'
+              .thumbnail
+                = image_tag 'placeholder-video-small.png'
+              .video-details
+                %span.episode-number
+                  EPISODE #397 -
+                %span.episode-date
+                  Dec 09, 2012 - 
+                %span.episode-comments
+                  6 comments
+              .video-length
+                (15 minutes)
+              .video-description
+                %p Allow users to import records into the database by uploading a CSV or Excel document. Here I show how to use Roo to parse these files and present a solution for validations.
+
+      .page-sidebar
+        .search.module
+          %h1.module-title Search
+          %form
+            = text_field_tag 'search', '', placeholder: 'Search more easily using tags'
+        .module
+          %h1.module-title Categories
+          %ul.categories
+            - 34.times do
+              %li.category= link_to 'ActiveRecord'
+        .module.advertising
+          %h1.module-title Advertising
+          = image_tag 'http://placehold.it/300x96', class: 'ad-300'
+          = image_tag 'http://placehold.it/146x96', class: 'ad-146'
+          = image_tag 'http://placehold.it/146x96', class: 'ad-146'
+        .module.help
+          %h1.module-title Help
+          %p If you have questions about. You can look also here:  #{link_to 'Help'} / #{link_to 'FAQ'}.
+    .page-footer 
+      .container
+        - 3.times do
+          .sitemap
+            %h1.links-title Ruby Made Simple
+            %ul.links
+              %li.link= link_to 'About Ruby'
+              %li.link= link_to 'Developers'
+
+        %ul.links
+    .page-copyright
+      .container
+        %span.rights Ruby Made Simple. All rights reserved.
+        %ul.links
+          %li.link= link_to 'Terms'
+          %li.link= link_to 'Copyright'
+          %li.link= link_to 'Site Map'
+        = image_tag 'hybridgroup.png', class: 'logo-hybridgroup'
+
+
+
+
+    %footer
     / ! end of #container
