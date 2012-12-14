@@ -1,6 +1,0 @@
-.btn {
-  $gradient-start: #d45933;
-  $gradient-end: #cc4b2b;
-
-  @include background-image(linear-gradient($gradient-start, $gradient-end));
-}

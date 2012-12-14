@@ -41,7 +41,7 @@
             .video-description
               %p Find out exactly what Rails is doing under the hood when it renders a view template for a response. What object context handles the template? How does the lookup process work? That and more covered in this code walkthrough. 
             .video-actions
-              = link_to 'Subscribe', '', class: 'btn subscribe'
+              = render 'shared/add_this'
           - 3.times do
             %article.video
               %h1.video-title= link_to 'Importing CSV and Excel'
@@ -60,6 +60,8 @@
                 %p Allow users to import records into the database by uploading a CSV or Excel document. Here I show how to use Roo to parse these files and present a solution for validations.
 
       .page-sidebar
+        .module.social-sites
+          = render "shared/social_links"
         .search.module
           %h1.module-title Search
           %form
@@ -85,8 +87,7 @@
             %ul.links
               %li.link= link_to 'About Ruby'
               %li.link= link_to 'Developers'
-
-        %ul.links
+        = render "shared/social_links"
     .page-copyright
       .container
         %span.rights Ruby Made Simple. All rights reserved.
@@ -94,7 +95,8 @@
           %li.link= link_to 'Terms'
           %li.link= link_to 'Copyright'
           %li.link= link_to 'Site Map'
-        = image_tag 'hybridgroup.png', class: 'logo-hybridgroup'
+        = link_to 'http://www.hybridgroup.com' do
+          = image_tag 'hybridgroup.png', class: 'logo-hybridgroup'
 
 
 

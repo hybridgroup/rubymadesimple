@@ -13,7 +13,9 @@
 
 @import "compass/reset";
 @import "compass";
-@import "ui/buttons";
+@import "icons/*.png";
+$icons-sprite-dimensions: true;
+@include all-icons-sprites;
 
 $color-gray: #a7a4a4;
 $color-red: #a7000e;
@@ -80,7 +82,7 @@ body {
 
   .rights {
     float: left;
-    color: lighten($color-gray, 20%);
+    color: lighten($color-gray, 10%);
     margin-right: 30px;
   }
 
@@ -279,4 +281,27 @@ ul.nav li {
 #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
+}
+
+.social-sites {
+  @include pie-clearfix;
+
+}
+
+.socials {
+  @include pie-clearfix;
+
+  float: right;
+
+  .social {
+    float: left;
+    margin-left: 10px;
+    text-indent: -9999px;
+  }
+
+  @each $type in rss, facebook, twitter, gplus {
+    .#{$type} {
+      @extend .icons-#{$type};
+    }
+  }
 }
