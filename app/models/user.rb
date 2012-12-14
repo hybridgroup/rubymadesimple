@@ -22,6 +22,9 @@ class User
   ## Rememberable
   field :remember_created_at, :type => Time
 
+  ## Admin?
+  field :admin, type: Boolean
+
   ## Trackable
   field :sign_in_count,      :type => Integer, :default => 0
   field :current_sign_in_at, :type => Time

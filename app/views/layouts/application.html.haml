@@ -24,7 +24,7 @@
 
     .container
       #main.page-main{:role => "main"}
-        -#= yield
+        = yield
         .videos
           %article.video.featured
             %h1.video-title= link_to "You don't know 'if' by Ron Evans"
