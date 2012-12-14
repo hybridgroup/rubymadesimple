@@ -2,3 +2,21 @@
 -#- @users.each do |user|
   -#%p
     -#User: #{link_to user.name, user}
+.videos
+  = render @videos
+  -#- 3.times do
+    %article.video
+      %h1.video-title= link_to 'Importing CSV and Excel'
+      .thumbnail
+        = image_tag 'placeholder-video-small.png'
+      .video-details
+        %span.episode-number
+          EPISODE #397 -
+        %span.episode-date
+          Dec 09, 2012 - 
+        %span.episode-comments
+          6 comments
+      .video-length
+        (15 minutes)
+      .video-description
+        %p Allow users to import records into the database by uploading a CSV or Excel document. Here I show how to use Roo to parse these files and present a solution for validations.
