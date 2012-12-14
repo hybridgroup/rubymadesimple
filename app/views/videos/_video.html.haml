@@ -1,0 +1,16 @@
+%article.video.featured
+  %h1.video-title= link_to video.title, video
+  = image_tag video.thumbnail_url, class: 'thumbnail'
+  .video-details
+    %span.episode-number
+      EPISODE #1 -
+    %span.episode-date
+      #{video.published_on} -
+    %span.episode-comments
+      0 comments
+  .video-length
+    (8 minutes)
+  .video-description
+    %p #{video.description}
+  .video-actions
+    = render 'shared/add_this', url: url_for(video)
