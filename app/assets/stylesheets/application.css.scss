@@ -313,11 +313,14 @@ ul.nav li {
   .social {
     float: left;
     margin-left: 10px;
-    text-indent: -9999px;
+    a {
+      display: block;
+      text-indent: -9999px;
+    }
   }
 
-  @each $type in rss, facebook, twitter, gplus {
-    .#{$type} {
+  @each $type in rss, facebook, twitter, gplus, github {
+    .#{$type} a {
       @extend .icons-#{$type};
     }
   }
