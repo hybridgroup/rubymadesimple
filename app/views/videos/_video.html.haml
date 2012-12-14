@@ -1,5 +1,5 @@
 %article.video.featured
-  %h1.video-title= link_to video.title, video
+  %h1.video-title= link_to video.title, video_path(video.id)
   = image_tag video.thumbnail_url, class: 'thumbnail'
   .video-details
     %span.episode-number

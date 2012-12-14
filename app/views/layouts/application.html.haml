@@ -11,7 +11,8 @@
   %body{:class => "#{controller_name} #{action_name}"}
     %header.page-header
       .container
-        = image_tag 'logo.png', class: "logo"
+        = link_to root_path do
+          = image_tag 'logo.png', class: "logo"
         -#= render 'layouts/navigation'
         -#= render 'layouts/messages'
 

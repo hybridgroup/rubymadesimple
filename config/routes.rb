@@ -1,4 +1,5 @@
 App::Application.routes.draw do
+  resources :videos
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   authenticated :user do
