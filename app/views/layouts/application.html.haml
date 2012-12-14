@@ -26,23 +26,22 @@
         -#= yield
         .videos
           %article.video.featured
-            %h1.video-title= link_to 'Action View Walkthrough'
-            .thumbnail
-              = image_tag 'placeholder-video.png'
+            %h1.video-title= link_to "You don't know 'if' by Ron Evans"
+            = image_tag 'http://img.youtube.com/vi/gOOQQ1H5_hs/0.jpg', class: 'thumbnail'
             .video-details
               %span.episode-number
-                EPISODE #397 -
+                EPISODE #1 -
               %span.episode-date
-                Dec 09, 2012 - 
+                Nov 19, 2012 - 
               %span.episode-comments
-                6 comments
+                0 comments
             .video-length
-              (15 minutes)
+              (8 minutes)
             .video-description
-              %p Find out exactly what Rails is doing under the hood when it renders a view template for a response. What object context handles the template? How does the lookup process work? That and more covered in this code walkthrough. 
+              %p Ron Evans delivers this first in a series Ruby fundamentals for beginners. The fundamentals of the 'if' statement
             .video-actions
               = render 'shared/add_this'
-          - 3.times do
+          -#- 3.times do
             %article.video
               %h1.video-title= link_to 'Importing CSV and Excel'
               .thumbnail
@@ -81,12 +80,11 @@
           %p If you have questions about. You can look also here:  #{link_to 'Help'} / #{link_to 'FAQ'}.
     .page-footer 
       .container
-        - 3.times do
-          .sitemap
-            %h1.links-title Ruby Made Simple
-            %ul.links
-              %li.link= link_to 'About Ruby'
-              %li.link= link_to 'Developers'
+        .sitemap
+          %h1.links-title Ruby Made Simple
+          %ul.links
+            %li.link= link_to 'About Ruby'
+            %li.link= link_to 'Developers'
         = render "shared/social_links"
     .page-copyright
       .container
