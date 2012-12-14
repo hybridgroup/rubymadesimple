@@ -13,6 +13,7 @@
 
 @import "compass/reset";
 @import "compass";
+@import "ui/buttons";
 
 $color-gray: #a7a4a4;
 $color-red: #a7000e;
@@ -20,6 +21,9 @@ $color-red: #a7000e;
 a {
   color: lighten($color-red, 10%);
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 body {
@@ -126,7 +130,7 @@ body {
 
 .page-main {
   float: left;
-  width: 481px;
+  width: 496px;
 }
 
 .page-sidebar {
@@ -148,6 +152,8 @@ body {
 
 .videos {
   .video {
+    @include pie-clearfix;
+
     border-bottom: 1px solid lighten($color-gray, 20%);
     margin-bottom: 30px;
     padding-bottom: 30px;
@@ -184,14 +190,14 @@ body {
   .featured {
     .thumbnail {
       float: none;
-      padding: 8px;
+      padding: 8px 8px 5px;
     }
 
     .video-details,
     .video-length,
     .video-description {
       font-size: 14px;
-    line-height: 18px;
+      line-height: 18px;
     }
   }
 
@@ -202,6 +208,10 @@ body {
     a {
       color: $color-red;
     }
+  }
+
+  .video-actions {
+    margin: 20px 0px 0px;
   }
 }
 
@@ -225,8 +235,13 @@ body {
 
   .category {
     float: left;
+    font-weight: 300;
     margin-bottom: 3px;
-    margin-right: 50px;
+    margin-right: 10px;
+    width: 145px;
+    &:nth-child(2n+2) {
+      margin-right: 0px;
+    }
     a {
       color: #333;
     }
